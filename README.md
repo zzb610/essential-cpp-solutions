@@ -10,5 +10,5 @@ solutions for the book 'Essential C++'
 #### 使用说明
 
 章节目录 ch**
-练习索引 ex*.*
+练习索引 ex*_*
 

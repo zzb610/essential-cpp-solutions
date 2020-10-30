@@ -1,3 +1,0 @@
-hello:2
-my:1
-word:1

@@ -60,20 +60,21 @@ void PopulateMap(ifstream &name_file, map<string, vstring> &families)
             {
                 child.push_back(text_line.substr(prev_pos, end_pos));
             }
-
-            // last word
-            if (prev_pos < text_size)
-            {
-                child.push_back(text_line.substr(prev_pos, pos - prev_pos));
-            }
-            if (!families.count(family_name))
-            {
-                families[family_name] = child;
-            }
-            else
-            {
-                cerr << "Ops! We already have a" << family_name << "in our map\n";
-            }
+            ++pos;
+            prev_pos = pos;
+        }
+        // last word
+        if (prev_pos < text_size)
+        {
+            child.push_back(text_line.substr(prev_pos, pos - prev_pos));
+        }
+        if (!families.count(family_name))
+        {
+            families[family_name] = child;
+        }
+        else
+        {
+            cerr << "Ops! We already have a" << family_name << "in our map\n";
         }
     }
 }

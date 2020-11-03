@@ -78,3 +78,34 @@ void PopulateMap(ifstream &name_file, map<string, vstring> &families)
         }
     }
 }
+
+void DisplayMap(const map<string, vstring> &families, ostream &os)
+{
+    for (auto kv : families)
+    {
+        os << "***family:" << kv.first << "***" << endl;
+        for (auto v : kv.second)
+        {
+            cout << v << " ";
+        }
+        cout << endl;
+    }
+}
+
+#include <algorithm>
+void QueryMap(const string &family, const map<string, vstring> &families)
+{
+    auto it = families.find(family);
+    if (it != families.end())
+    {
+        for (auto name : it->second)
+        {
+            cout << name << " ";
+        }
+        cout << endl;
+    }
+    else
+    {
+        cout << "not found!" << endl;
+    }
+}

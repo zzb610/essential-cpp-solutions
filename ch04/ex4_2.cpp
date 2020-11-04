@@ -16,6 +16,7 @@ int main(int argc, char const *argv[])
     cin.clear();
 
     cout << "what word to search for?";
+    
     cin >> str;
 
 

@@ -40,10 +40,10 @@ int main(int argc, char const *argv[])
     cout << st << endl;
 
     PeekbackStack pst;
-    while(!st.empty())
+    while (!st.empty())
     {
         string t;
-        if(st.pop(t))
+        if (st.pop(t))
         {
             pst.push(t);
         }

@@ -1,6 +1,7 @@
-#include "lifo_stack.h"
+#include "stack.h"
+#include <iostream>
 
-void LIFOStack::print(ostream &os) const
+void Stack::print(ostream &os) const
 {
     vector<ElemType>::const_reverse_iterator crit = stack_.rbegin(), crend = stack_.rend();
     os << "\n\t";
@@ -11,7 +12,7 @@ void LIFOStack::print(ostream &os) const
     os << std::endl;
 }
 
-bool LIFOStack::pop(ElemType &elem)
+bool Stack::pop(ElemType &elem)
 {
     if (empty())
     {
@@ -21,7 +22,7 @@ bool LIFOStack::pop(ElemType &elem)
     stack_.pop_back();
     return true;
 }
-bool LIFOStack::push(const ElemType &elem)
+bool Stack::push(const ElemType &elem)
 {
     if (full())
     {
@@ -30,8 +31,4 @@ bool LIFOStack::push(const ElemType &elem)
     stack_.push_back(elem);
     ++top_;
     return true;
-}
-bool LIFOStack::peek(int index, ElemType &elem)
-{
-    return false;
 }

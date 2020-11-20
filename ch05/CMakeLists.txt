@@ -4,7 +4,7 @@ project(ch05 VERSION 0.1.0)
 include(CTest)
 enable_testing()
 
-add_executable(ch05 ex5_1.cpp lifo_stack.cc peekback_stack.cc)
+add_executable(ch05 ex5_1.cpp stack.cc peekback_stack.cc)
 
 set(CPACK_PROJECT_NAME ${PROJECT_NAME})
 set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})

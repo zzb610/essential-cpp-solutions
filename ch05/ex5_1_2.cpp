@@ -1,5 +1,4 @@
 #include "stack.h"
-#include "lifo_stack.h"
 #include "peekback_stack.h"
 
 #include <iostream>
@@ -28,7 +27,7 @@ ostream &operator<<(ostream &os, Stack &st)
 
 int main(int argc, char const *argv[])
 {
-    LIFOStack st;
+    Stack st;
     string str;
     while (cin >> str && !st.full())
     {
@@ -47,9 +46,9 @@ int main(int argc, char const *argv[])
         {
             pst.push(t);
         }
-        cout << "About to call peek() with Peekback_Stack" << endl;
-        peek(pst, pst.top() - 1);
-        cout << pst;
     }
+    cout << "About to call peek() with Peekback_Stack" << endl;
+    peek(pst, pst.top() - 1);
+    cout << pst;
     return 0;
 }

@@ -1,28 +1,41 @@
 #ifndef __STACK_H__
 #define __STACK_H__
 
-#include <iostream>
+#include <vector>
 #include <string>
-using std::cout;
+#include <iostream>
 using std::ostream;
-
-typedef std::string ElemType;
+using std::vector;
+using ElemType = std::string;
+using std::cout;
 
 class Stack
 {
 public:
-    virtual ~Stack() {}
+    Stack(int capacity = 0) : top_(0)
+    {
+        if (capacity)
+        {
+            stack_.reserve(capacity);
+        }
+    }
+    virtual ~Stack()
+    {
+    }
 
-    virtual bool pop(ElemType &elem) = 0;
-    virtual bool push(const ElemType &elem) = 0;
-    virtual bool peek(int index, ElemType &elem) = 0;
+    int size() const { return stack_.size(); }
+    bool empty() const { return !top_; }
+    bool full() const { return size() > stack_.max_size(); }
+    int top() const { return top_; }
 
-    virtual int top() const = 0;
-    virtual int size() const = 0;
+    void print(ostream &os = cout) const;
+    bool pop(ElemType &elem);
+    bool push(const ElemType &elem);
+    virtual bool peek(int index, ElemType &elem) { return false; }
 
-    virtual bool empty() const = 0;
-    virtual bool full() const = 0;
-    virtual void print(ostream &os = cout) const = 0;
+protected:
+    vector<ElemType> stack_;
+    int top_;
 };
 
 #endif // __STACK_H__

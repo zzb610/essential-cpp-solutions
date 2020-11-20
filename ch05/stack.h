@@ -17,8 +17,8 @@ public:
     virtual bool push(const ElemType &elem) = 0;
     virtual bool peek(int index, ElemType &elem) = 0;
 
-    virtual int top() = 0;
-    virtual int size() = 0;
+    virtual int top() const = 0;
+    virtual int size() const = 0;
 
     virtual bool empty() const = 0;
     virtual bool full() const = 0;

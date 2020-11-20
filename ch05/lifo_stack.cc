@@ -23,9 +23,15 @@ bool LIFOStack::pop(ElemType &elem)
 }
 bool LIFOStack::push(const ElemType &elem)
 {
-
+    if (full())
+    {
+        return false;
+    }
+    stack_.push_back(elem);
+    ++top_;
     return true;
 }
 bool LIFOStack::peek(int index, ElemType &elem)
 {
+    return false;
 }
